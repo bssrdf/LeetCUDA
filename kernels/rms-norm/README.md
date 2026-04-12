@@ -23,6 +23,16 @@ export TORCH_CUDA_ARCH_LIST=Ada
 python3 rms_norm.py
 ```
 
+Windows
+
+```
+pip install ninja
+set TORCH_CUDA_ARCH_LIST=Ada
+# setup Visual C++ toolchain
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
+python3 rms_norm.py
+```
+
 输出:
 
 ```bash

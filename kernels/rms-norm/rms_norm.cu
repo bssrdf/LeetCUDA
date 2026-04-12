@@ -79,7 +79,8 @@ __global__ void rms_norm_f32x4_kernel(float *x, float *y, float g, int N,
                                       int K) {
   int tid = threadIdx.x; // 0..K-1
   int bid = blockIdx.x;  // 0..N-1
-  int idx = (bid * blockDim.x + threadIdx.x) * 4;
+  // int idx = (bid * blockDim.x + threadIdx.x) * 4;
+  int idx = bid * blockDim.x + threadIdx.x * 4;
   const float epsilon = 1e-5f;
 
   __shared__ float s_variance; // shared within block
